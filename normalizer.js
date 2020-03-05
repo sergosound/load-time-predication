@@ -10,8 +10,9 @@ class Normalizer {
   
   minutesNormalizer(number) {
     const { m, mm, mmm, fakeMinutes } = this;
+    const isFakeMinutesNumber = Object.keys(fakeMinutes).some(num => number.toString().includes(num));
     
-    if (fakeMinutes[number]) {
+    if (fakeMinutes[number] || isFakeMinutesNumber) {
       return mmm;
     }
     

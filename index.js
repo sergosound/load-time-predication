@@ -54,3 +54,8 @@ class PlayerCreator {
 const playerCreator = new PlayerCreator();
 
 playerCreator.startGame();
+
+// Добавить родительский клас для вывода статистики
+// Добавить возможность установки дефолтных значений в конструктор PlayerCreator
+// Расширить PlayerCreator.timePredictor функционалом вычисления времени в зависимости от времени начала вычисления
+// Расширить Normalizer для вывода секунд

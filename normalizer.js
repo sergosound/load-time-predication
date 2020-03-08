@@ -22,7 +22,7 @@ class Normalizer {
     const lastSymbol = numberToArray[numberToArray.length - 1];
     
     return minutes[lastSymbol];
-  }
+}
 }
 
 module.exports = new Normalizer();

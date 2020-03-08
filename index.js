@@ -1,11 +1,11 @@
 const normalizer = require('./normalizer');
 
 class PlayerCreator {
-  constructor() {
+  constructor({ playersLimit, intensity, timerCountdown }) {
     this.players = 0;
-    this.playersLimit = 60;
-    this.intensity = 1; // normal speed range: 0.1 - 3
-    this.timerCountdown = 3000;
+    this.playersLimit = playersLimit || 60;
+    this.intensity = intensity || 1; // normal speed range: 0.1 - 3
+    this.timerCountdown = timerCountdown || 3000;
     this.creationSpeed = 1000 / this.intensity;
     this.predictedTime = null;
   };
@@ -51,11 +51,10 @@ class PlayerCreator {
   }
 };
 
-const playerCreator = new PlayerCreator();
+const playerCreator = new PlayerCreator({playersLimit: 60, intensity: 1, timerCountdown: 3000});
 
 playerCreator.startGame();
 
 // Добавить родительский клас для вывода статистики
-// Добавить возможность установки дефолтных значений в конструктор PlayerCreator
 // Расширить PlayerCreator.timePredictor функционалом вычисления времени в зависимости от времени начала вычисления
 // Расширить Normalizer для вывода секунд
